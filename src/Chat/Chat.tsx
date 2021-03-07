@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { MessageInput } from "../MessageInput";
+import { MessageInput } from "../shared/components/MessageInput";
 import { Message } from "../shared/interfaces/Chat";
 import { ChatBubble } from "./ChatBubble";
 import { Box, Divider, Paper } from "@material-ui/core";
@@ -9,7 +9,7 @@ export const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
 
   const handleMessageSent = (message: Message) => {
-    setMessages((prevState) => [message, ...prevState]);
+    setMessages((prevState) => [...prevState, message]);
   };
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export const Chat = () => {
           <div ref={ref} />
         </Box>
         <Divider />
-        <Box display="flex" justifyContent="space-between" paddingY={4}>
+        <Box display="flex" alignSelf="center" paddingY={4}>
           <MessageInput onMessageSent={handleMessageSent} />
         </Box>
       </Box>

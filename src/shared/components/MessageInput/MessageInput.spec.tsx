@@ -1,7 +1,7 @@
 import { MessageInput } from "./MessageInput";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { ErrorMessages } from "../shared/constants/errors";
+import { ErrorMessages } from "../../constants/errors";
 
 const onMessageSentMock = jest.fn();
 
